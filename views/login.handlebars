@@ -1,7 +1,7 @@
 
 {{! Unstyled Login View boilerplate is completed for you }}
 
-<h2>Login</h2>
+{{!-- <h2>Login</h2>
 
 <form id="login-form" class="card-body">
   <div>
@@ -16,4 +16,54 @@
   <a type="button" href="/signup">Sign up instead</a>
 </form>
 
+<script src="/js/login.js"></script> --}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <ul>
+      <li class="li-inline nav-item"><a href="/">Home</a></li>
+      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/">TuneIn</a></h1>
+  </header>
+
+  <main class="col-auto">
+    <div class="card">
+  <div class="card-header">
+    <h2>Login</h2>
+  </div>
+  <form id="login-form" class="card-body">
+    <div>
+      <label for="username-input-login">Username</label>
+      <input type="text" id="username-input-login" />
+    </div>
+    <div>
+      <label for="password-input-login" class="form-label">Password</label>
+      <input type="password" id="password-input-login" />
+    </div>
+    <button type="submit" id="login-btn" class="btn">Login!</button>
+    <a type="button" href="/signup">Sign up instead</a>
+  </form>
+</div>
+
 <script src="/js/login.js"></script>
+  </main>
+
+</body>
+
+</html>
+<script src="/js/logout.js"></script>

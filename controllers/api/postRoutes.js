@@ -17,7 +17,6 @@ router.post("/", withAuth, async (req, res) => {
         res.status(500).json(error);
     }
 })
-
 // TODO - create a PUT route for updating a post's title or body
 // This should be a protected route, so you'll need to use the withAuth middleware
 router.put("/update/:id", withAuth, async (req, res) => {
@@ -40,7 +39,6 @@ router.put("/update/:id", withAuth, async (req, res) => {
         res.status(500).json(error);
     }
 });
-
 // TODO - create a DELETE route for deleting a post with a specific id
 // This should be a protected route, so you'll need to use the withAuth middleware
 

@@ -9,7 +9,7 @@ const withAuth = require("../utils/auth");
 
 // TODO - create logic for the GET route for / that renders the dashboard homepage
 // It should display all of the posts created by the logged in user
-router.get("/", withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res, next) => {
   // TODO - retrieve all posts from the database for the logged in user
   // render the dashboard template with the posts retrieved from the database
   //default layout is set to main.handlebars, layout need to be changed to dashboard to use dashboard.handlebars

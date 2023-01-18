@@ -1,4 +1,4 @@
-
+// stores user data
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config');
@@ -29,6 +29,11 @@ User.init(
       validate: {
         len: [4]
       }
+    },
+    // adding email of the user
+    email: {
+      type: dataTypes.STRING,
+      allowNull: false
     }
   },
   {

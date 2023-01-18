@@ -40,7 +40,7 @@ User.init(
     },
     // adding email of the user
     email: {
-      type: dataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     }
   },

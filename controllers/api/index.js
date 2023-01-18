@@ -1,5 +1,7 @@
 
 //index.js inside /api combines all api routes and exports one router middleware module
+// Start of the routes 
+
 const router = require('express').Router();
 
 const userRoutes = require('./userRoutes');

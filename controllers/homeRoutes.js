@@ -28,7 +28,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-
+// homepage when not logged in
 
 // This route renders the signup page, which has been completed for you
 router.get("/signup", (req, res) => {

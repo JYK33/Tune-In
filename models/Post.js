@@ -21,9 +21,16 @@ Post.init(
     type: DataTypes.STRING,
     allowNull: false,
  },
- body: {
-  type: DataTypes.STRING,
+  body: {
+    type: DataTypes.STRING,
  }
+},
+{
+  sequelize,
+  timestamps: false,
+  freezeTableName: true,
+  underscored: true,
+  modelName: 'post'
 }
 );
 

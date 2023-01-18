@@ -1,9 +1,9 @@
 
 // index.js establishes relationships between the models, 
 //and also creates the foreign key constraights without explicitly setting them in the Models
-const User = require('./User');
-const Post = require('./Post');
-const Comment = require('./Comment');
+const User = require('./user');
+const Post = require('./post');
+const Comment = require('./comment');
 
 //Posts will have a userId field connecting to user table's id column
 //if a user gets deleted, all posts made by the user get deleted

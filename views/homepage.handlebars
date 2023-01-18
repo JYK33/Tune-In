@@ -1,3 +1,30 @@
 
 {{!-- TODO - write the template to show all posts on the / route --}}
-<h1>This is the home page that displays posts of all users</h1>
+  <input type="radio" checked id="toggle--login" name="toggle" class="ghost" />
+  <input type="radio" id="toggle--signup" name="toggle" class="ghost" />
+
+  <img class="logo framed" src="../images/cooltext427616942754329.png" alt="Decomposing logo" />
+
+ <form class="form form--login framed">
+    <input type="email" placeholder="Email" class="input input--top" id="email-login"/>
+    <input type="password" placeholder="Password" class="input" id="password-login"/>
+    <input type="submit" value="Log in" class="input input--submit" />
+    
+    <label for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+  
+  <form class="form form--signup framed">
+    <h2 class="text text--centered text--omega">Join the other <b>152.6 million</b> blogs and</br>share all that you love.</h2>
+
+    <input type="email" placeholder="Email" class="input input--top" id="email-signup"/>
+    <input type="password" placeholder="Password" class="input" id="password-signup"/>
+    <input type="text" placeholder="Username" class="input" id="user-signup"/>
+    <input type="submit" value="Sign up" class="input input--submit" />
+    
+    <label for="toggle--login" class="text text--small text--centered">Not new? <b>Log in</b></label>
+  </form>
+
+
+  <div class="background-image"></div> 
+
+  <script src="/js/login.js"></script>

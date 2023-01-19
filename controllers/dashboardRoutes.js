@@ -21,7 +21,9 @@ router.get("/", withAuth, async (req, res, next) => {
 
 // TODO - create logic for the GET route for /new that renders the new post page
 // It should display a form for creating a new post
-
+router.get("/new", withAuth, async (req, res) => {
+  res.render('newPost', {layout: "dashboard",});
+});
 // TODO - create logic for the GET route for /edit/:id that renders the edit post page
 // It should display a form for editing an existing post
 

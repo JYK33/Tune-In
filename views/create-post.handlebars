@@ -1,1 +1,18 @@
 {{!-- where users can create posts --}}
+<div>
+    <!-- not sure if we need to add form as a class -->
+    <form method="post" class="form" id="newPost">
+        <div class="banner">
+            <h1>Create a new post</h1>
+        </div>
+        <div>
+            <p><label>Title: </label></p> <textarea id="title" name="title" cols="40" rows="2"></textarea>
+        </div>
+        <div>
+            <p><label>Content: </label></p> <textarea name="body" id="body" cols="40" rows="5"></textarea>
+        </div> <br />
+        <div class="btnBlock">
+            <button form="newPost" class="input--submit" type="submit">Post!</button>
+        </div>
+    </form>
+</div>

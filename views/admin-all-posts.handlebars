@@ -1,8 +1,13 @@
 {{!-- where all users post are shown  --}}
-<h1>Your posts</h1>
-<div class="allPosts">
-    {{!-- {{#each post as }}
-    {{> posts}}
-    {{/each}} --}}
-HELOO
+<a href ="/dashboard/create"  style="margin-top: 5px;" class ="create">Create Post</a>
+
+<h2 style="margin-left:50rem;">My Posts</h2>
+<div class="col-md-8">
+{{#each posts }}
+<form method="POST" action="api/post/delete/{{id}}">
+    <button type="submit">DELETE</button>
+</form>
+</form>
+{{>posts this }}
+{{/each}}
 </div>

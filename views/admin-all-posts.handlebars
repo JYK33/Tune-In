@@ -1,2 +1,8 @@
 {{!-- where all users post are shown  --}}
-<h1>Will Show All posts page</h1>
+<h1>Your posts</h1>
+<div class="allPosts">
+    {{#each post as }}
+    {{> posts}}
+    {{/each}}
+
+</div>

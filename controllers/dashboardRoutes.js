@@ -7,6 +7,7 @@
 
 const router = require("express").Router();
 const { Post, User  } = require("../models/");
+const { restore } = require("../models/user");
 const withAuth = require("../utils/auth");
 
 // TODO - create logic for the GET route for / that renders the dashboard homepage
@@ -33,10 +34,14 @@ router.get("/", withAuth, async (req, res) => {
   // refer to admin-all-posts.handlebars write the code to display the posts
 });
 
+router.post("/create", withAuth, async (res,req)=> {
+  console.log("todo add post to database")
+  res.redirect ('/dashboard');
+})
 // TODO - create logic for the GET route for /new that renders the new post page
 // It should display a form for creating a new post
-router.get("/new", withAuth, async (req, res) => {
-  res.render('newPost', {layout: "dashboard",});
+router.get("/create", withAuth, async (req, res) => {
+  res.render('create-post', {layout: "dashboard",});
 });
 // TODO - create logic for the GET route for /edit/:id that renders the edit post page
 // It should display a form for editing an existing post

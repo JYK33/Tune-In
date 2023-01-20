@@ -14,7 +14,7 @@ const withAuth = require("../utils/auth");
 router.get("/", withAuth, async (req, res) => {
   const postedData = await Post.findAll ({
     where: { userId: req.session.userId },
-    order: [["createdAt", "DESC"]],
+    // order: [["createdAt", "DESC"]],
     include: [
       {
         model: User,

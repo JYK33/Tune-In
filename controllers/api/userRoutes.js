@@ -21,6 +21,7 @@ router.post('/', async (req, res) => {
       res.json(newUser);
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -30,17 +31,17 @@ router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({
       where: {
-        username: req.body.username,
+        email: req.body.email,
       },
     });
-
+    console.log(user);
     if (!user) {
       res.status(400).json({ message: 'No user account found!' });
       return;
     }
 
     const validPassword = user.checkPassword(req.body.password);
-
+    console.log(validPassword);
     if (!validPassword) {
       res.status(400).json({ message: 'No user account found!' });
       return;
@@ -54,6 +55,7 @@ router.post('/login', async (req, res) => {
       res.json({ user, message: 'You are now logged in!' });
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json({ message: 'No user account found!' });
   }
 });

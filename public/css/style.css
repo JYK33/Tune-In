@@ -10,13 +10,6 @@ html, body {
   font-family: Helvetica, Arial, sans-serif;
   overflow: hidden;
 }
-.background-image {
-  position: fixed;
-  z-index: -1;
-  top:0; right:0; bottom:0; left:0;
-  background: url('../images/wednesday-netflix-series-violin-8k-wallpaper-uhdpaper.com-664@0@h.jpg') center;
-  background-size: cover;
-}
 
 .ghost {
   position: absolute;
@@ -25,7 +18,7 @@ html, body {
 
 .framed {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 20%; left: 50%;
   width: 15rem;
   margin-left: -7.5rem;
 }
@@ -33,6 +26,7 @@ html, body {
 .logo {
   margin-top: -9em;
   cursor: default;
+  top: 18%;
 }
 
 .form {
@@ -61,7 +55,7 @@ html, body {
     border-top: 0;
   }
   .input--submit {
-    background-color: #202020;
+    background-color: #ff495d;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -71,8 +65,7 @@ html, body {
   }
 
 .text {
-  color: #fff;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.8);
+  color: #000000; 
   text-decoration: none;
 }
   .text--small {
@@ -98,8 +91,16 @@ html, body {
     border-right: 1px solid rgba(255,255,255,0.5);
     margin-right: 0.75rem;
     padding-right: 0.75rem;
-  }
+  } 
 
+ .background-image {
+  position: fixed;
+  z-index: -1;
+  top:0; right:0; bottom:0; left:0;
+  background: url('../images/image_processing20210906-19740-11zwxia.gif') center;
+  background-size: cover;
+ }
 
-#toggle--login:checked ~ .form--signup { left:200%; visibility:hidden; }
-#toggle--signup:checked ~ .form--login { left:-100%; visibility:hidden; }
+ #toggle--login:checked ~ .form--signup { left:200%; visibility:hidden; }
+ #toggle--signup:checked ~ .form--login { left:-100%; visibility:hidden; }
+ 

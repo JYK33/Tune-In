@@ -1,5 +1,19 @@
+<style>
+    .post{
+        border: 1px solid rgb(139, 177, 189);
+        border-radius: 15px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .post h2 {
+        color: rgb(99, 29, 99);
+    }
+</style>
+
 <div class="post"> 
     <h1>{{title}}</h1>
     <p>{{body}}</p>
-    
+    <p>Posted by {{user.username}}</p>
+    <p>Posted on {{format_date createdAt}}</p>
 </div>

@@ -3,7 +3,7 @@
 
 <h2 style="margin-left:50rem;">All Posts</h2>
 <div class="col-md-8">
-{{#each posts }}
+{{#each posts as | userPost | }}
 {{>post this }}
 {{/each}}
 </div>

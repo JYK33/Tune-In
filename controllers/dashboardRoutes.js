@@ -13,7 +13,7 @@ const withAuth = require("../utils/auth");
 // TODO - create logic for the GET route for / that renders the dashboard homepage
 // It should display all of the posts created by the logged in user
 router.get("/", withAuth, async (req, res) => {
-  const postedData = await Post.findAll ({
+  const postsData = await Post.findAll ({
     where: { userId: req.session.userId },
     // order: [["createdAt", "DESC"]],
     include: [
@@ -23,7 +23,7 @@ router.get("/", withAuth, async (req, res) => {
       }
     ],
   });
-  const posts = postedData.map((post) => post.get ({ plain: true}));
+  const posts = postsData.map((post) => post.get ({ plain: true}));
   res.render("admin-all-posts", {layout: "dashboard", posts});
 
 
@@ -34,7 +34,7 @@ router.get("/", withAuth, async (req, res) => {
   // refer to admin-all-posts.handlebars write the code to display the posts
 });
 
-router.post("/create", withAuth, async (res,req)=> {
+router.post("/create", withAuth, async (req,res)=> {
   console.log("todo add post to database")
   res.redirect ('/dashboard');
 })

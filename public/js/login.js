@@ -8,7 +8,6 @@ const loginFormHandler = async function(event) {
   console.log('Email: ' + email)
 
   console.log('Password: ' + password)
-  debugger
   if (email  && password) {
     const response = await fetch('/api/user/login', {
       method: 'POST',
@@ -20,7 +19,6 @@ const loginFormHandler = async function(event) {
     }).catch(err => console.log(err));
     
     if (response.ok) {
-      alert('Success')
       document.location.replace('/dashboard');
     } else {
       alert('Failed to login');

@@ -54,10 +54,10 @@ router.post("/create", withAuth, async (req,res)=> {
   } catch (err) {
     restore.status(500).json(err);
   }
+  res.redirect ('/dashboard');
 });
 
 // console.log("redirect to dashboard?")
-// res.redirect ('/dashboard');
 
 
 

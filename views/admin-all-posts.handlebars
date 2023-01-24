@@ -6,7 +6,7 @@
   <p><a class="btn btn-primary btn-lg" href ="/dashboard/create" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Create post</a></p>
 </div>
 <div class="col-md-8">
-{{#each posts as | post | }}
-{{> post }}
+{{#each posts }}
+{{>post this }}
 {{/each}}
 </div>

@@ -23,7 +23,7 @@
     <div>
       <ul class="nav navbar-nav">
         <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/users-post">Profile</a></li>
+        <li><a href="/dashboard/profile">Profile</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/" id="logout-link">logout <i class="fa fa-user" aria-hidden="true"></i></a></li>
@@ -52,3 +52,5 @@
   else { alert('Failed to log out'); } };
   document.querySelector('#logout-link').addEventListener('click', logout);
 </script>
+
+<script src="/js/post.js"></script>

@@ -49,7 +49,7 @@ router.get("/profile", withAuth, async (req, res) => {
   });
   const  posts = postsData.map((post) => post.get ({ plain: true}));
   console.log(posts);
-  res.render("users-post", {layout: "dashboard", user});
+  res.render("users-post", {layout: "dashboard", posts});
 });
 
 // It should display a form for creating a new post
@@ -67,7 +67,7 @@ router.post("/create", withAuth, async (req,res)=> {
     });
     res.status(200).json({message: "You post has been created"});
   } catch (err) {
-    restore.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 

@@ -1,58 +1,38 @@
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-h2 {
-  font-family: 'Fraunces', sans-serif;
-}
-p, span, button {
-  font-family: 'Montserrat', sans-serif;
-}
-</style>
-
-<div class="post"> 
-    <section
-      class="bg-[#F2EBE3] h-screen w-screen flex justify-center items-center"
-    >
-      <div class="max-w-xs md:max-w-screen-md md:flex md:items-stretch">
-        <div class="w-full h-56 md:h-96">
-          <img
-            class="w-full h-full object-cover bg-center rounded-t-lg md:h-full md:rounded-l-lg md:rounded-tr-none"
-            src="https://i.ibb.co/59nWQVT/image-product-desktop.jpg"
-            alt="Gabrielle Essence Eau De Parfum"
-          />
-        </div>
-        <div
-          class="bg-white rounded-b-lg md:rounded-r-lg md:rounded-bl-none p-5 flex flex-col justify-between items-start"
-        >
-          <p id="username" class="mb-2 text-[#6C7289] tracking-widest text-sm">Posted by {{user.username}}</p>
-          <h2 id="title" class="text-3xl text-[#1C232B] mb-4">
-            {{title}}
-          </h2>
-          <p id="body" class="text-[#6C7289]">
-            {{body}}
-          </p>
-          <div class="flex space-x-4 items-center mb-4 mt-6">
-            <p class="text-[#6C7289]">Posted on {{createdAt}}</p>
-          </div>
-          <button
-            class="bg-[#3C8067] text-white font-semibold flex space-x-2 w-full justify-center rounded items-center py-3"
-          >
-            <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
-                fill="#FFF"
-              />
-            </svg>
-            <span>Comment</span>
-          </button>
-        </div>
-      </div>
-    </section>
-<script src="https://cdn.tailwindcss.com"></script>
-</div>   
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+<div class="post">
+      <ul class="comment_list">
+            <li>
+                <div class="comment_card" data-depth="0">
+                    <figure class="figure">
+                        <img class="image" src="https://newsfeedtemplate.netlify.com/img/user01.jpg" alt="Naveen Pantra"/>
+                        <figcaption class="fig_caption">
+                            <h5 class="name">{{title}}</h5>
+                            <h6 class="occupation">{{user.username}}</h6>
+                            <p class="date">22nd March, 2020</p>
+                        </figcaption>
+                    </figure>
+                    <article class="comment_text">
+                        {{body}}
+                    </article>
+                    <div class="comment_options">
+                        <button>Edit</button>
+                        <button>Comment</button>
+                        <button>Show Comments</button>  
+                    </div>
+                    <div class="comment_edit">
+                       <textarea name="comment_edit" id="comment_edit" class="comment_edit_textarea" cols="0" rows="0"></textarea>
+                       <p class="comment_message">Please enter more than one character to accept comment.</p>
+                        <div class="comment_edit_options">
+                            <button data-action="submit">Submit</button>
+                            <button data-action="cancle">Cancle</button>
+                        </div> 
+                    </div>
+                    <div class="comments">
+                        <p class="no_comment_found">No Comments Found :(</p>     
+                    </div>
+                </div>
+            </li>
+        </ul> 
+  
+</div>
 

@@ -18,8 +18,24 @@ const withAuth = require("../utils/auth");
 // render the dashboard template with the posts retrieved from the database
 //default layout is set to main.handlebars, layout need to be changed to dashboard to use dashboard.handlebar
 
-// is gets all of a users post, needs to be linked to users-posts.hdb
+// get all the posts made from all users 
 router.get("/", withAuth, async (req, res) => {
+  const postsData = await Post.findAll ({
+    // order: [["createdAt", "DESC"]],
+    include: [
+      {
+        model: User,
+        attributes: ["username"]
+      }
+    ],
+  });
+  const posts = postsData.map((post) => post.get ({ plain: true}));
+  res.render("admin-all-posts", {layout: "dashboard", posts});
+});
+
+
+// for user posts only 
+router.get("/profile", withAuth, async (req, res) => {
   const postsData = await Post.findAll ({
     where: { userId: req.session.userId },
     // order: [["createdAt", "DESC"]],
@@ -31,10 +47,7 @@ router.get("/", withAuth, async (req, res) => {
     ],
   });
   const posts = postsData.map((post) => post.get ({ plain: true}));
-  res.render("admin-all-posts", {layout: "dashboard", posts});
-
-
-  // refer to admin-all-posts.handlebars write the code to display the posts
+  res.render("users-post", {layout: "dashboard", posts});
 });
 
 // It should display a form for creating a new post
@@ -54,10 +67,8 @@ router.post("/create", withAuth, async (req,res)=> {
   } catch (err) {
     restore.status(500).json(err);
   }
-  res.redirect ('/dashboard');
 });
 
-// console.log("redirect to dashboard?")
 
 
 

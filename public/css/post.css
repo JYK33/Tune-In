@@ -62,28 +62,14 @@
   .posts {
     width: 140rem;
     margin: 0;
-    background-color: white;
-    box-shadow: var(--shadow-dark);
     padding: 4rem;
     transform-origin: top left;
     transform: scale(0.7);
     position: relative;
     left: 50%;
-    top: 30%;
+    transform: translateX(-50%);
    
   
-  }
-  .user-posts{
-    width: 140rem;
-    margin: 0;
-    background-color: white;
-    box-shadow: var(--shadow-dark);
-    padding: 4rem;
-    transform-origin: top left;
-    transform: scale(0.7);
-    position: relative;
-    left: 50%;
-    top: 30%;
   }
 
   .comment_list > li {
@@ -103,6 +89,7 @@
     border-radius: 5px;
     box-shadow: var(--shadow-light);
     margin-bottom: 2rem;
+    background-color: white;
   }
   
   .figure {

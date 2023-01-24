@@ -48,7 +48,7 @@ router.get("/profile", withAuth, async (req, res) => {
     ],
   });
   const posts = postsData.map((post) => post.get ({ plain: true}));
-  res.render("users-post", {layout: "dashboard", posts});
+  res.render("users-post", {layout: "dashboard", userposts});
 });
 
 // It should display a form for creating a new post

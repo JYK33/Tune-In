@@ -73,6 +73,18 @@
    
   
   }
+  .user-posts{
+    width: 140rem;
+    margin: 0;
+    background-color: white;
+    box-shadow: var(--shadow-dark);
+    padding: 4rem;
+    transform-origin: top left;
+    transform: scale(0.7);
+    position: relative;
+    left: 50%;
+    top: 30%;
+  }
 
   .comment_list > li {
     margin-bottom: 4rem;

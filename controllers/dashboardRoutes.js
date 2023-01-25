@@ -6,7 +6,7 @@
 // All of these routes will be protected by the withAuth middleware function.
 
 const router = require("express").Router();
-const { Post, User  } = require("../models/");
+const { Post, User, Comment  } = require("../models/");
 const { restore } = require("../models/user");
 const withAuth = require("../utils/auth");
 
@@ -21,13 +21,17 @@ const withAuth = require("../utils/auth");
 // get all the posts made from all users 
 router.get("/", withAuth, async (req, res) => {
   const postsData = await Post.findAll ({
-    // order: [["createdAt", "DESC"]],
+    order: [["createdAt", "DESC"]],
     include: [
       {
         model: User,
-        attributes: ["username"]
+        attributes: ["username", "id"]
+      },
+      {
+        model: Comment,
       }
     ],
+    
   });
   const posts = postsData.map((post) => post.get ({ plain: true}));
   console.log(posts);
@@ -39,7 +43,7 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   const postsData = await Post.findAll ({
     where: { userId: req.session.userId },
-    // order: [["createdAt", "DESC"]],
+    order: [["createdAt", "DESC"]],
     include: [
       {
         model: User,

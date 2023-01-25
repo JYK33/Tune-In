@@ -22,9 +22,9 @@ const deletePostHandler = async (event)=>{
     event.preventDefault();
     const title = document.querySelector('#title')
     const content = document.querySelector('#body')
-    const id = document.querySelector('#postId').value
-    console.log(title, content)
-    const response = await fetch(`/api/delete/${id}`, {
+    const id = event.target.dataset.id
+    console.log(title, content, id)
+    const response = await fetch(`/api/post/delete/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
             title: title,
@@ -33,6 +33,10 @@ const deletePostHandler = async (event)=>{
         headers: { 'Content-Type': 'application/json' },
       }).catch(err => console.log(err));
       
-    //   document.location.replace('/dashboard')
+    document.location.replace('/dashboard/profile')
 }
-document.querySelector('#delete')?.addEventListener('click', deletePostHandler)
+
+const deleteButtons = document.querySelectorAll('.delete')
+for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i]?.addEventListener('click', deletePostHandler)
+}

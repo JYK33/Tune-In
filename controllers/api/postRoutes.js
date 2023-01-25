@@ -42,7 +42,7 @@ router.put("/update/:id", withAuth, async (req, res) => {
 // TODO - create a DELETE route for deleting a post with a specific id
 // This should be a protected route, so you'll need to use the withAuth middleware
 
-router.delete("delete/:id", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
     try {
         const d = await Post.destroy({
             where: {

@@ -7,10 +7,11 @@ const withAuth = require('../../utils/auth');
 // This should be a protected route, so you'll need to use the withAuth middleware
 router.post("/", withAuth, async (req, res) => {
     try {
+        console.log(req.body)
         const d = await Comment.create({
-            body: req.body.body,
-            user_id: req.session.userID,
-            post_id: req.body.postID
+            body: req.body.content,
+            userId: req.session.userId,
+            postId: req.body.postId
         })
         res.status(200).json({message: "Comment created!"});
     } catch (error) {

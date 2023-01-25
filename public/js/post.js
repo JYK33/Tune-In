@@ -40,3 +40,14 @@ const deleteButtons = document.querySelectorAll('.delete')
 for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i]?.addEventListener('click', deletePostHandler)
 }
+
+const comButton = document.getElementById('commentButton');
+    comButton.onclick = function() {
+        var div = document.getElementById('comments');
+        if (div.style.display !== 'none') {
+            div.style.display = 'none';
+        }
+        else {
+            div.style.display = 'block';
+        }
+    }

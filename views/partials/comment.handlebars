@@ -1,0 +1,19 @@
+<div class="comments">
+  <h4>Comments</h4>
+    <ul class="comment_list">
+        <li>
+            <div class="comment_card" data-depth="0">
+                <figure class="commentfigure">
+                     <img class="commentimage" src="https://newsfeedtemplate.netlify.com/img/user01.jpg" alt="Naveen Pantra"/>
+                        <figcaption class="commentfig_caption">
+                            <h6 class="commentuser">{{user.username}}</h6>
+                            <p class="date">{{ format_date createdAt }}</p>
+                            </figcaption>
+                            </figure>
+                            <article class="comment_text">
+                                 {{body}}
+                            </article>  
+            </div>
+         </li>
+    </ul> 
+</div>

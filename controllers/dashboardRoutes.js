@@ -6,7 +6,7 @@
 // All of these routes will be protected by the withAuth middleware function.
 
 const router = require("express").Router();
-const { Post, User  } = require("../models/");
+const { Post, User, Comment  } = require("../models/");
 const { restore } = require("../models/user");
 const withAuth = require("../utils/auth");
 
@@ -25,9 +25,13 @@ router.get("/", withAuth, async (req, res) => {
     include: [
       {
         model: User,
-        attributes: ["username"]
+        attributes: ["username", "id"]
+      },
+      {
+        model: Comment,
       }
     ],
+    
   });
   const posts = postsData.map((post) => post.get ({ plain: true}));
   console.log(posts);

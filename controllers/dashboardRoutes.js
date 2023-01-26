@@ -21,7 +21,7 @@ const withAuth = require("../utils/auth");
 // get all the posts made from all users 
 router.get("/", withAuth, async (req, res) => {
   const postsData = await Post.findAll ({
-    // order: [["createdAt", "DESC"]],
+    order: [["createdAt", "DESC"]],
     include: [
       {
         model: User,
@@ -39,7 +39,7 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   const postsData = await Post.findAll ({
     where: { userId: req.session.userId },
-    // order: [["createdAt", "DESC"]],
+    order: [["createdAt", "DESC"]],
     include: [
       {
         model: User,

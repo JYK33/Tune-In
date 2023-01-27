@@ -10,11 +10,11 @@
                             <p class="date">22nd March, 2020</p>
                         </figcaption>
                     </figure>
-                    <article class="comment_text">
+                    <textarea disabled id="post-{{id}}" class="comment_text">
                         {{body}}
-                    </article>
+                    </textarea>
                     <div class="comment_options">
-                        <button>Edit</button>
+                        <button data-id="{{id}}" class="edit">Edit</button>
                         <button data-id="{{id}}" class="delete">Delete</button>
                         <input type="hidden" id="postId" value="{{id}}" />
                     </div>

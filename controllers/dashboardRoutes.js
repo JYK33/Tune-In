@@ -75,7 +75,23 @@ router.post("/create", withAuth, async (req,res)=> {
   }
 });
 
+router.get("/update/:id", withAuth, async (req, res) => {
+  const postData = await Post.find ({
+    where : {id:req.session.id},
+      include: [
+        {
+          model: User,
+          attributes: ["username"]
+        }
+      ],
+    });
+    const  posts = postData.map((post) => post.get ({ plain: true}));
+    console.log(posts);
 
+
+
+  res.render('edit-post', {layout: "dashboard",});
+  });
 
 
 

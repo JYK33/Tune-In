@@ -15,12 +15,15 @@
                         {{body}}
                     </article>
                     <div class="comment_options">
-                        <button id="commentButton"> Show Comments</button>  
+                        <button id="hideButton"> Show Comments</button>  
                     </div>
+                    <div id="hideSection" style="display: none">
+                        <h4>Comments</h4>
                     <div id="comments"class="postscomments">
                         {{#each comments }} 
                         {{>comment this }}
                         {{/each}}   
+                    </div>
                     </div>
                     <div class="comment_edit">
                         <h5>Write a comment</h5>

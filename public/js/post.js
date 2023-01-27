@@ -1,12 +1,15 @@
+// creating a new post
 const newPostHandler = async (event) => {
   event.preventDefault();
   const title = document.querySelector("#title").value;
+  const email = document.querySelector("#email").value;
   const content = document.querySelector("#body").value;
   console.log(title, content);
   const response = await fetch("/dashboard/create", {
     method: "POST",
     body: JSON.stringify({
       title: title,
+      email: email,
       body: content,
     }),
     headers: { "Content-Type": "application/json" },
@@ -16,6 +19,7 @@ const newPostHandler = async (event) => {
 };
 document.querySelector("#submit")?.addEventListener("click", newPostHandler);
 
+// deleting a post
 const deletePostHandler = async (event) => {
   event.preventDefault();
   const title = document.querySelector("#title");
@@ -39,18 +43,20 @@ for (let i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i]?.addEventListener("click", deletePostHandler);
 }
 
-const comButton = document.getElementById("hideButton");
-if (comButton) {
+// leaving a comment
+Array.from(document.querySelectorAll("#hideButton")).forEach((comButton) => {
   comButton.onclick = function () {
-    var div = document.getElementById("hideSection");
+    console.log("I GOT CLICKED");
+    var div = comButton.parentElement.nextElementSibling;
     if (div.style.display !== "none") {
       div.style.display = "none";
     } else {
       div.style.display = "block";
     }
   };
-}
+});
 
+// editing a post
 const editPostHandler = async (event) => {
   event.preventDefault();
   const title = document.querySelector("#title");
@@ -74,6 +80,7 @@ const editPostHandler = async (event) => {
 //     editButtons[i]?.addEventListener('click', editPostHandler)
 // }
 
+//editing a post
 const handleClick = (event) => {
   event.target.textContent = "Save";
   document

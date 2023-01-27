@@ -56,37 +56,45 @@ Array.from(document.querySelectorAll("#hideButton")).forEach((comButton) => {
   };
 });
 
+
 // editing a post
 const editPostHandler = async (event) => {
   event.preventDefault();
-  const title = document.querySelector("#title");
-  const content = document.querySelector("#body");
-  const id = event.target.dataset.id;
-  console.log(title, content, id);
+  // const content = document.querySelector("#body");
+  const id = document.querySelector("#postId").value;
+  const title = document.querySelector(".title-"+id).innerHTML;;
+  const content = document.querySelector(".body-"+id).value;
+  // const id = event.target.dataset.id;
+  console.log(title, content, );
+  console.log(`/api/post/update/${id}`)
 
   fetch(`/api/post/update/${id}`, {
     method: "PUT",
     body: JSON.stringify({
-      title: title.value,
-      body: content.value,
+      title: title,
+      body: content,
+      postID: id,
     }),
     headers: { "Content-Type": "application/json" },
   }).catch((err) => console.log(err));
 
   document.location.replace("/dashboard/profile");
 };
+Array.from(document.querySelectorAll(".saveEdit")).forEach((e)=>
+  e.addEventListener('click', editPostHandler)
+);
 // const editButtons = document.querySelectorAll('.edit')
 // for (let i = 0; i < editButtons.length; i++) {
 //     editButtons[i]?.addEventListener('click', editPostHandler)
 // }
 
 //editing a post
-const handleClick = (event) => {
-  event.target.textContent = "Save";
-  document
-    .querySelector(`#post-${event.target.dataset.id}`)
-    .removeAttribute("disabled");
-};
-Array.from(document.querySelectorAll(".edit")).forEach((e) =>
-  e.addEventListener("click", handleClick)
-);
+// const handleClick = (event) => {
+//   // event.target.textContent = "Save";
+//   // document
+//   //   .querySelector(`#post-${event.target.dataset.id}`)
+//   //   .removeAttribute("disabled");
+// };
+// Array.from(document.querySelectorAll(".edit")).forEach((e) =>
+//   e.addEventListener("click", handleClick)
+// );

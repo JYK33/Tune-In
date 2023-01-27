@@ -75,7 +75,7 @@ const editPostHandler = async (event) => {
 // }
 
 const handleClick = (event) => {
-  event.target.textContent = "save";
+  event.target.textContent = "Save";
   document
     .querySelector(`#post-${event.target.dataset.id}`)
     .removeAttribute("disabled");

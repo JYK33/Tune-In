@@ -39,10 +39,10 @@ for (let i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i]?.addEventListener("click", deletePostHandler);
 }
 
-const comButton = document.getElementById("commentButton");
+const comButton = document.getElementById("hideButton");
 if (comButton) {
   comButton.onclick = function () {
-    var div = document.getElementById("comments");
+    var div = document.getElementById("hideSection");
     if (div.style.display !== "none") {
       div.style.display = "none";
     } else {

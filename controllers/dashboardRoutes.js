@@ -95,14 +95,5 @@ router.get("/update/:id", withAuth, async (req, res) => {
 
 
 
-
-
-
-
-
-
-// TODO - create logic for the GET route for /edit/:id that renders the edit post page
-// It should display a form for editing an existing post
-
 module.exports = router;
 

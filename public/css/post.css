@@ -59,6 +59,7 @@
     font-family: "Lato", sans-serif;
     color: var(--color-text);
   }
+
   .posts {
     width: 140rem;
     height: auto;
@@ -69,8 +70,11 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-   
-  
+  }
+
+  .occupation {
+    text-align: left;
+    padding-left: 10px;
   }
 
   .comment_list > li {
@@ -84,17 +88,26 @@
     flex-direction: column;
     padding: 1rem;
     border-radius: 5px;
+    border-style: solid;
+    border-color: #64130a;
     box-shadow: var(--shadow-light);
     margin-bottom: 2rem;
     background-color: white;
     margin-left: 160px;
   }
+
+  .post-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: var(--line);
+  }
   
   .figure {
     display: flex;
     justify-content: start;
-    padding-bottom: 2rem;
-    border-bottom: var(--line);
+    padding: 15px;
+    /* border-bottom: var(--line); */
   }
   
   .image {
@@ -121,11 +134,13 @@
   .user {
     font-size: 1.8rem;
     margin-bottom: auto;
+    font-style: oblique;
   }
   
   .date {
     font-size: 1.8rem;
     font-weight: 400;
+    padding: 15px;
   }
   
   .post_text {

@@ -32,7 +32,7 @@ document
   .querySelector('.form--login')
   .addEventListener('submit', loginFormHandler);
 
-
+  
   const signupFormHandler = async function(event) {
     event.preventDefault();
   

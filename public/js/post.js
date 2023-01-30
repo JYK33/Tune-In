@@ -5,7 +5,7 @@ const newPostHandler = async (event) => {
   // const email = document.querySelector("#email").value;
   const content = document.querySelector("#body").value;
   console.log(title, content);
-  const response = await fetch("/dashboard/create", {
+  const response = await fetch("/api/post/", {
     method: "POST",
     body: JSON.stringify({
       title: title,
@@ -58,13 +58,10 @@ Array.from(document.querySelectorAll("#hideButton")).forEach((comButton) => {
 
 
 // editing a post
-const editPostHandler = async (event) => {
+const editPostHandler = async (event, id) => {
   event.preventDefault();
-  // const content = document.querySelector("#body");
-  const id = document.querySelector("#postId").value;
   const title = document.querySelector(".title-"+id).innerHTML;;
-  const content = document.querySelector(".body-"+id).value;
-  // const id = event.target.dataset.id;
+  const content = document.querySelector(".body-"+id).value.trim();
   console.log(title, content, );
   console.log(`/api/post/update/${id}`)
 
@@ -80,21 +77,6 @@ const editPostHandler = async (event) => {
 
   document.location.replace("/dashboard/profile");
 };
-Array.from(document.querySelectorAll(".saveEdit")).forEach((e)=>
-  e.addEventListener('click', editPostHandler)
+Array.from(document.querySelectorAll(".saveEdit")).forEach((el)=>
+  el.addEventListener('click', (e) => editPostHandler(e, el.dataset.id))
 );
-// const editButtons = document.querySelectorAll('.edit')
-// for (let i = 0; i < editButtons.length; i++) {
-//     editButtons[i]?.addEventListener('click', editPostHandler)
-// }
-
-//editing a post
-// const handleClick = (event) => {
-//   // event.target.textContent = "Save";
-//   // document
-//   //   .querySelector(`#post-${event.target.dataset.id}`)
-//   //   .removeAttribute("disabled");
-// };
-// Array.from(document.querySelectorAll(".edit")).forEach((e) =>
-//   e.addEventListener("click", handleClick)
-// );
